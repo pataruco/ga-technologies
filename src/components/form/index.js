@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+
+import TechList from '../tech-list';
 
 class Form extends Component {
   constructor(props) {
@@ -25,18 +27,23 @@ class Form extends Component {
   }
 
   render() {
+    const technologies = this.state.technologies;
+
     return (
-      <form onSubmit={this.onSubmit}>
-        <label htmlFor="technology">Technology:</label>
-        <input
-          type="text"
-          id="technology"
-          name="technology"
-          onChange={this.onChange}
-          value={this.state.technology}
-        />
-        <input type="submit" value="enter" />
-      </form>
+      <Fragment>
+        <form onSubmit={this.onSubmit}>
+          <label htmlFor="technology">Technology:</label>
+          <input
+            type="text"
+            id="technology"
+            name="technology"
+            onChange={this.onChange}
+            value={this.state.technology}
+          />
+          <input type="submit" value="enter" />
+        </form>
+        <TechList technologies={technologies} />
+      </Fragment>
     );
   }
 }
