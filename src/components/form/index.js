@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Form extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.props.onSubmit}>
-        <label htmlFor="technology">Technology:</label>
+const Form = props => {
+  return (
+    <form onSubmit={props.onSubmit}>
+      <label htmlFor="technology">
+        Technology:
         <input
           type="text"
           id="technology"
           name="technology"
-          onChange={this.props.onChange}
-          value={this.props.technology}
+          onChange={props.onChange}
+          value={props.technology}
         />
-        <input type="submit" value="enter" />
-      </form>
-    );
-  }
-}
+      </label>
+      <input type="submit" value="enter" />
+    </form>
+  );
+};
 
 export default Form;
