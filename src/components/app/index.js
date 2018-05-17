@@ -35,12 +35,7 @@ class App extends Component {
     return (
       <section className="app">
         <h1>Technologies we learnt</h1>
-        <Form
-          technologies={technologies}
-          technology={technology}
-          onSubmit={onSubmit}
-          onChange={onChange}
-        />
+        <Form technology={technology} onSubmit={onSubmit} onChange={onChange} />
         <TechList technologies={technologies} />
       </section>
     );
