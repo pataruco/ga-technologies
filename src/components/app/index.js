@@ -11,6 +11,7 @@ class App extends Component {
     this.state = { technologies: [], technology: '' };
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.deleteTechnology = this.deleteTechnology.bind(this);
   }
 
   onSubmit(event) {
@@ -29,6 +30,14 @@ class App extends Component {
     this.setState({ technology: event.target.value });
   }
 
+  deleteTechnology(item) {
+    this.setState({
+      technologies: this.state.technologies.filter(
+        technology => technology !== item,
+      ),
+    });
+  }
+
   render() {
     const { technologies, technology } = this.state;
     const { onSubmit, onChange } = this;
@@ -36,7 +45,10 @@ class App extends Component {
       <section className="app">
         <h1>Technologies we learnt</h1>
         <Form technology={technology} onSubmit={onSubmit} onChange={onChange} />
-        <TechList technologies={technologies} />
+        <TechList
+          technologies={technologies}
+          deleteTechnology={this.deleteTechnology}
+        />
       </section>
     );
   }
