@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import 'normalize.css';
 import './style.css';
 
-import Form from '../form';
-import TechList from '../tech-list';
+import Form from './form';
+import TechList from './tech-list';
 
 class App extends Component {
   constructor(props) {

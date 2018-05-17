@@ -1,0 +1,12 @@
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.svg {
+  fill: none;
+  stroke: red;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
