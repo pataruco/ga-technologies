@@ -1,0 +1,22 @@
+.item {
+  padding: 1em;
+  position: relative;
+}
+
+.item:hover .button,
+.item:focus .button {
+  display: inline;
+}
+
+.button {
+  appearance: none;
+  border: none;
+  width: 2em;
+  display: none;
+  position: absolute;
+  top: 1em;
+}
+
+.list {
+  list-style: none;
+}

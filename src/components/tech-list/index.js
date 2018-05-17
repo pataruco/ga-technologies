@@ -1,4 +1,6 @@
 import React from 'react';
+import DeleteIcon from '../delete-icon';
+import './style.css';
 
 const TechList = props => {
   const { deleteTechnology, technologies } = props;
@@ -10,14 +12,16 @@ const TechList = props => {
   const listTechnologies = technologies.map(technology => {
     const key = technology.toString();
     return (
-      <li key={key}>
+      <li key={key} className="item">
         {technology}
-        <button onClick={() => removeItem(key)}>delete</button>
+        <button onClick={() => removeItem(key)} className="button">
+          <DeleteIcon />
+        </button>
       </li>
     );
   });
 
-  return <ul>{listTechnologies}</ul>;
+  return <ul className="list">{listTechnologies}</ul>;
 };
 
 export default TechList;
