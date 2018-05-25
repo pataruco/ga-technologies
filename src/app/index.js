@@ -44,14 +44,20 @@ class App extends Component {
     const { onSubmit, onChange } = this;
     return (
       <section className="app">
-        <header>
+        <header className="header">
           <Header />
         </header>
-        <Form technology={technology} onSubmit={onSubmit} onChange={onChange} />
-        <TechList
-          technologies={technologies}
-          deleteTechnology={this.deleteTechnology}
-        />
+        <main>
+          <Form
+            technology={technology}
+            onSubmit={onSubmit}
+            onChange={onChange}
+          />
+          <TechList
+            technologies={technologies}
+            deleteTechnology={this.deleteTechnology}
+          />
+        </main>
       </section>
     );
   }

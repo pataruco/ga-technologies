@@ -2,18 +2,19 @@ import React from 'react';
 
 const Form = props => {
   return (
-    <form onSubmit={props.onSubmit}>
-      <label htmlFor="technology">
+    <form onSubmit={props.onSubmit} className="form">
+      <label htmlFor="technology" className="label">
         Technology:
-        <input
-          type="text"
-          id="technology"
-          name="technology"
-          onChange={props.onChange}
-          value={props.technology}
-        />
       </label>
-      <input type="submit" value="enter" />
+      <input
+        type="text"
+        id="technology"
+        name="technology"
+        onChange={props.onChange}
+        value={props.technology}
+        className="input"
+      />
+      <input type="submit" value="enter" className="button-form" />
     </form>
   );
 };

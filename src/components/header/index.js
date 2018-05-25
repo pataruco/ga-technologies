@@ -3,10 +3,10 @@ import './style.css';
 
 const Header = () => (
   <Fragment>
+    <h1 className="title">Technologies we learnt</h1>
     <picture>
       <img src="" alt="General Assembly logo" />
     </picture>
-    <h1>Technologies we learnt</h1>
   </Fragment>
 );
 
