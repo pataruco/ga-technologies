@@ -1,14 +1,11 @@
 import React from 'react';
 import DeleteIcon from '../delete-icon';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
 import './style.css';
 
 const TechList = props => {
   const { deleteTechnology, technologies } = props;
-  let toDelete = false;
 
   const removeItem = item => {
-    toDelete = true;
     deleteTechnology(item);
   };
 
