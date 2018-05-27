@@ -3,7 +3,7 @@ import './style.css';
 
 const Form = props => {
   return (
-    <form onSubmit={props.onSubmit} className="form">
+    <form onSubmit={props.onSubmit} className="form" id="form">
       <label htmlFor="technology" className="label">
         Technology:
       </label>
@@ -15,11 +15,14 @@ const Form = props => {
           onChange={props.onChange}
           value={props.technology}
           className="input"
+          autocomplete="off"
         />
 
         <span className="border" />
       </span>
-      <input type="submit" value="enter" className="button-form" />
+      <button type="submit" className="button-form" id="form" data-text="enter">
+        <span className="button-form-span">enter</span>
+      </button>
     </form>
   );
 };
