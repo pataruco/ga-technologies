@@ -4,6 +4,7 @@ import './style.css';
 
 import Form from '../components/form';
 import TechList from '../components/tech-list';
+import Header from '../components/header';
 
 class App extends Component {
   constructor(props) {
@@ -43,12 +44,20 @@ class App extends Component {
     const { onSubmit, onChange } = this;
     return (
       <section className="app">
-        <h1>Technologies we learnt</h1>
-        <Form technology={technology} onSubmit={onSubmit} onChange={onChange} />
-        <TechList
-          technologies={technologies}
-          deleteTechnology={this.deleteTechnology}
-        />
+        <header className="header">
+          <Header />
+        </header>
+        <main>
+          <Form
+            technology={technology}
+            onSubmit={onSubmit}
+            onChange={onChange}
+          />
+          <TechList
+            technologies={technologies}
+            deleteTechnology={this.deleteTechnology}
+          />
+        </main>
       </section>
     );
   }
