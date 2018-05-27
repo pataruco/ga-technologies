@@ -57,7 +57,7 @@ class App extends Component {
             </figure>
           </div>
         </header>
-        <main>
+        <main className="main">
           <TechList
             technologies={technologies}
             deleteTechnology={this.deleteTechnology}

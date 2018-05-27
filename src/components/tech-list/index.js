@@ -9,15 +9,15 @@ const TechList = props => {
     deleteTechnology(item);
   };
 
-  const listTechnologies = technologies.map(technology => {
-    const key = technology.toString();
+  const listTechnologies = technologies.map((technology, index) => {
+    const key = index;
     return (
-      <ol key={key} className="item">
+      <li key={key} className="item">
         {technology}
-        <button onClick={() => removeItem(key)} className="button">
+        <button onClick={() => removeItem(technology)} className="button">
           <DeleteIcon />
         </button>
-      </ol>
+      </li>
     );
   });
 

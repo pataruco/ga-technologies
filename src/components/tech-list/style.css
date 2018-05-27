@@ -10,7 +10,7 @@
 }
 
 .item {
-  padding: 1em;
+  padding: 0.25em 1em;
   position: relative;
   font-size: 1.25rem;
   counter-increment: list;
@@ -37,8 +37,7 @@
 .button {
   appearance: none;
   border: none;
-  width: 2em;
+  width: 1.5em;
   display: none;
-  position: absolute;
-  top: 1em;
+  vertical-align: middle;
 }
