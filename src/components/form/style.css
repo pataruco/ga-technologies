@@ -1,7 +1,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  flex-basis: 33%;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .label {
@@ -11,24 +14,43 @@
   max-width: 25%;
 }
 
+.border-wrapper {
+  position: relative;
+  display: block;
+  max-width: 25%;
+  min-width: 10rem;
+  overflow: hidden;
+}
+
 .input {
   display: block;
   appearance: none;
   border: 0;
-  border-bottom: 2px solid;
-  margin-bottom: 1em;
-  transition: all 0.5s ease;
-  min-width: 10rem;
-  max-width: 25%;
+  border-bottom: 1px solid;
+  padding: 0.25rem;
+}
+
+.border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 4px);
+  border-bottom: 4px solid red;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.3s;
 }
 
 .input:focus {
   outline: none;
-  transition: all 0.5s ease;
-  min-width: 12rem;
+}
+
+.input:focus + .border {
+  transform: translate3d(0, 0, 0);
 }
 
 .button-form {
+  margin-top: 1em;
   appearance: none;
   display: block;
   padding: 0.25em;
