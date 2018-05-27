@@ -1,6 +1,32 @@
+.list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  flex-wrap: wrap;
+  counter-reset: list 0;
+  list-style: none;
+}
+
 .item {
   padding: 1em;
   position: relative;
+  font-size: 1.25rem;
+  counter-increment: list;
+}
+
+.item::before {
+  content: counter(list);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  color: red;
+  /* */
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
 }
 
 .item:hover .button,
@@ -15,14 +41,4 @@
   display: none;
   position: absolute;
   top: 1em;
-}
-
-.list {
-  list-style: disc;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  max-height: 80vh;
-  flex-wrap: wrap;
 }

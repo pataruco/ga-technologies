@@ -15,7 +15,7 @@ const Form = props => {
           onChange={props.onChange}
           value={props.technology}
           className="input"
-          autocomplete="off"
+          autoComplete="off"
         />
 
         <span className="border" />
