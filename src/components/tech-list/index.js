@@ -12,12 +12,12 @@ const TechList = props => {
   const listTechnologies = technologies.map(technology => {
     const key = technology.toString();
     return (
-      <li key={key} className="item">
+      <ol key={key} className="item">
         {technology}
         <button onClick={() => removeItem(key)} className="button">
           <DeleteIcon />
         </button>
-      </li>
+      </ol>
     );
   });
 
