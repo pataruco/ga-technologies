@@ -1,20 +1,28 @@
 import React from 'react';
+import './style.css';
 
 const Form = props => {
   return (
-    <form onSubmit={props.onSubmit} className="form">
+    <form onSubmit={props.onSubmit} className="form" id="form">
       <label htmlFor="technology" className="label">
         Technology:
       </label>
-      <input
-        type="text"
-        id="technology"
-        name="technology"
-        onChange={props.onChange}
-        value={props.technology}
-        className="input"
-      />
-      <input type="submit" value="enter" className="button-form" />
+      <span className="border-wrapper">
+        <input
+          type="text"
+          id="technology"
+          name="technology"
+          onChange={props.onChange}
+          value={props.technology}
+          className="input"
+          autoComplete="off"
+        />
+
+        <span className="border" />
+      </span>
+      <button type="submit" className="button-form" id="form" data-text="enter">
+        <span className="button-form-span">enter</span>
+      </button>
     </form>
   );
 };

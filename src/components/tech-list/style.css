@@ -1,6 +1,32 @@
+.list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  flex-wrap: wrap;
+  counter-reset: list 0;
+  list-style: none;
+}
+
 .item {
-  padding: 1em;
+  padding: 0.25em 1em;
   position: relative;
+  font-size: 1.25rem;
+  counter-increment: list;
+}
+
+.item::before {
+  content: counter(list);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  color: red;
+  /* */
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
 }
 
 .item:hover .button,
@@ -11,18 +37,27 @@
 .button {
   appearance: none;
   border: none;
-  width: 2em;
+  width: 1.5em;
   display: none;
-  position: absolute;
-  top: 1em;
+  vertical-align: middle;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  max-height: 80vh;
-  flex-wrap: wrap;
+.animated {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }

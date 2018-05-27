@@ -1,45 +1,96 @@
 .form {
+  align-items: start;
   display: flex;
+  flex-basis: 33%;
   flex-direction: column;
-  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .label {
-  font-size: 1.25em;
   display: block;
+  font-size: 1.25em;
   margin-bottom: 0.25em;
   max-width: 25%;
 }
 
-.input {
+.border-wrapper {
   display: block;
+  max-width: 25%;
+  min-width: 10rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.input {
   appearance: none;
   border: 0;
-  border-bottom: 2px solid;
-  margin-bottom: 1em;
-  transition: all 0.5s ease;
-  min-width: 10rem;
-  max-width: 25%;
+  border-bottom: 1px solid;
+  display: block;
+  padding: 0.25rem;
+}
+
+.border {
+  border-bottom: 4px solid #e61c25;
+  height: calc(100% - 4px);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.3s;
+  width: 100%;
 }
 
 .input:focus {
   outline: none;
-  transition: all 0.5s ease;
-  min-width: 12rem;
+}
+
+.input:focus + .border {
+  transform: translate3d(0, 0, 0);
 }
 
 .button-form {
   appearance: none;
-  display: block;
-  padding: 0.25em;
   border: 2px solid;
-  max-width: 25%;
-  transition: all 0.5s ease;
+  display: block;
+  margin-top: 1em;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.button-form::before {
+  background: #e61c25;
+  color: white;
+  content: attr(data-text);
+  height: 100%;
+  left: 0;
+  padding: 0.25em 0;
+  position: absolute;
+  top: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition: transform 0.3s;
+  width: 100%;
+}
+
+.button-form:hover::before {
+  transform: translate3d(0, 0, 0);
+}
+
+.button-form-span {
+  display: block;
+  padding: 0.25em 1.5em;
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition: transform 0.3s;
+}
+
+.button-form:hover .button-form-span {
+  transform: translate3d(0, 100%, 0);
 }
 
 .button-form:focus,
 .button-form:hover,
 .button-form:active {
   outline: 0;
-  box-shadow: 12px 10px 0 0 black;
 }

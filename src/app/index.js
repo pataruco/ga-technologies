@@ -4,7 +4,7 @@ import './style.css';
 
 import Form from '../components/form';
 import TechList from '../components/tech-list';
-import Header from '../components/header';
+import Logo from '../components/logo';
 
 class App extends Component {
   constructor(props) {
@@ -45,14 +45,19 @@ class App extends Component {
     return (
       <section className="app">
         <header className="header">
-          <Header />
-        </header>
-        <main>
           <Form
             technology={technology}
             onSubmit={onSubmit}
             onChange={onChange}
           />
+          <h1 className="title flex-item">Technologies we learnt</h1>
+          <div className="flex-item logo">
+            <figure className="logo-wrapper">
+              <Logo />
+            </figure>
+          </div>
+        </header>
+        <main className="main">
           <TechList
             technologies={technologies}
             deleteTechnology={this.deleteTechnology}
