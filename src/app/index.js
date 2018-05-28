@@ -22,6 +22,7 @@ class App extends Component {
     const { technologies, technology } = this.state;
     technologies.push(technology);
     this.setState({ technologies });
+    this.setState({ technology: ''})
   }
 
   onChange(event) {
