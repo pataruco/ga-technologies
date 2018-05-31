@@ -22,7 +22,7 @@ class App extends Component {
     const { technologies, technology } = this.state;
     technologies.push(technology);
     this.setState({ technologies });
-    this.setState({ technology: ''})
+    this.setState({ technology: '' });
   }
 
   onChange(event) {
@@ -51,7 +51,10 @@ class App extends Component {
             onSubmit={onSubmit}
             onChange={onChange}
           />
-          <h1 className="title flex-item">Technologies we learnt</h1>
+          <div className="title flex-item">
+            <h2 className="line-through">Technologies we learnt</h2>
+            <h2>Things we learnt</h2>
+          </div>
           <div className="flex-item logo">
             <figure className="logo-wrapper">
               <Logo />
