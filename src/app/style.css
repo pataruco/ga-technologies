@@ -37,3 +37,16 @@
 .main {
   padding: 20px;
 }
+
+@page {
+  size: 1210px 900px;
+  margin: 0;
+}
+
+@media print {
+  body {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+  }
+}
