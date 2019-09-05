@@ -3,7 +3,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  max-height: 80vh;
+  max-height: 75vh;
   flex-wrap: wrap;
   counter-reset: list 0;
   list-style: none;
@@ -22,7 +22,6 @@
   width: 1em;
   margin-left: -1em;
   color: red;
-  /* */
   margin-left: -1.5em;
   margin-right: 0.5em;
   text-align: right;
